@@ -1,17 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Single Page Application</title>
-</head>
-<body>
-    <h1>Welcome to the Single Page Application</h1>
-<nav>
-    <a href="/home">Home</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
-</nav>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- Contenuto della tua Single Page Application -->
+    <div class="pagina">
+      <!-- parte B barra laterale -->
+      <div class="barra-laterale">
+        <aside>
+          <nav>
+            <a href="#anagrafiche" class="attivo">
+              <i class="bi bi-people"></i> Anagrafiche
+            </a>
+            <a href="#contabilita">
+              <i class="bi bi-calculator"></i> Contabilità
+            </a>
+            <a href="#magazzino"> <i class="bi bi-box-seam"></i> Magazzino </a>
+            <a href="#vendite"> <i class="bi bi-graph-up"></i> Vendite </a>
+            <a href="#acquisti"> <i class="bi bi-cart"></i> Acquisti </a>
+            <a href="#risorse-umane">
+              <i class="bi bi-person-badge"></i> Risorse Umane
+            </a>
 
-</body>
+            <!-- Separatore: help e logout in fondo -->
+            <div class="separatore">
+              <a href="#help"> <i class="bi bi-question-circle"></i> Help </a>
+              <a href="#logout">
+                <i class="bi bi-box-arrow-right"></i> Logout
+              </a>
+            </div>
+          </nav>
+        </aside>
+      </div>
+
+      <!--INIZIA LA PARTE A DESTRA DELLA PAGINA-->
+      <div class="parte-destra">
+        <!-- parte A barra superiore -->
+        <div class="barra-superiore">
+          <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#anagrafiche">Anagrafiche</a>
+            <a href="#analytics">Analytics</a>
+            <a href="#report">Report</a>
+            <a href="#informazioni">Informazioni</a>
+            <a href="#impostazioni">Impostazioni</a>
+            <a href="#account">Account</a>
+          </nav>
+        </div>
+
+        <!-- parte C contenuto principale -->
+        <div class="contenuto-principale">
+          <main>
+            <h1>Benvenuto nella tua Single Page Application</h1>
+            <p>
+              Qui puoi visualizzare i tuoi dati, gestire le tue attività e
+              accedere a tutte le funzionalità della tua applicazione.
+            </p>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,0 +1,113 @@
+/* tolgo gli spazi automatici del browser */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+   il contentenitore principale della pagina: display: flex 
+   dice di mettere i div figli (contenuti nel div pagina)
+   uno accanto all'altro 
+*/
+
+.pagina {
+  display: flex;
+  height: 100vh;
+}
+
+/* barra laterale: larghezza fissa, altezza 100% */
+.barra-laterale {
+  width: 220px;
+  flex-shrink: 0;
+  background: #e8f4fb;        /* azzurrino chiaro */
+  padding: 16px;
+  display: flex;
+  flex-direction: column;     /* per spingere help/logout in fondo */
+  font-family: 'Segoe UI', system-ui, sans-serif;  /* font migliore */
+}
+.barra-laterale nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;                    /* prende tutto lo spazio */
+}
+
+
+.barra-laterale a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  color: #2a5a7c;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 2px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.barra-laterale a:hover {
+  background: #c8e6f5;
+  color: #1a3d56;
+}
+
+.barra-laterale a.attivo {
+  background: #1e3a5f;
+  color: white;
+}
+
+/* Spinge help e logout in fondo */
+.barra-laterale a.in-fondo {
+  margin-top: auto;
+}
+
+/* Separa visivamente il gruppo in fondo */
+.barra-laterale .separatore {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #b8d8ec;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.barra-laterale .separatore a {
+  color: #5a8aa8;
+}
+
+/* parte destra: prende tutto lo spazio rimanente rimasto dalla barra laterale che è l'unico elemento
+che compone la parte sinistra */
+.parte-destra {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+   overflow: hidden;
+}
+
+.barra-superiore {
+  height: 56px;
+  flex-shrink: 0;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 24px;
+}
+
+/*i link della barra superiore devono stare in orizzontale*/
+.barra-superiore nav {
+  display: flex;
+  gap: 20px;
+}
+
+.barra-superiore a {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.barra-superiore a:hover {
+  color: #111;
+}
+
+

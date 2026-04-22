@@ -1,0 +1,6 @@
+color
+background-color
+font-size
+font-family
+text-align
+font-weight
