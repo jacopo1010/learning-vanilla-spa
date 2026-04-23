@@ -1,113 +1,143 @@
-/* tolgo gli spazi automatici del browser */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 
-   il contentenitore principale della pagina: display: flex 
-   dice di mettere i div figli (contenuti nel div pagina)
-   uno accanto all'altro 
-*/
-
 .pagina {
   display: flex;
   height: 100vh;
 }
 
-/* barra laterale: larghezza fissa, altezza 100% */
-.barra-laterale {
-  width: 220px;
-  flex-shrink: 0;
-  background: #e8f4fb;        /* azzurrino chiaro */
-  padding: 16px;
-  display: flex;
-  flex-direction: column;     /* per spingere help/logout in fondo */
-  font-family: 'Segoe UI', system-ui, sans-serif;  /* font migliore */
-}
-.barra-laterale nav {
+.parte-sinistra {
   display: flex;
   flex-direction: column;
-  flex: 1;                    /* prende tutto lo spazio */
+  width: 258.89px;
+  height: 100vh;
+  background-color: white;
+  border-right: 1px solid #d9d9d9;
+  flex-shrink: 0;
+  transition: width 0.25s;
+  overflow: hidden;
 }
 
+.parte-sinistra-alto {
+  height: 58px;
+  padding: 0 8px;
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+}
 
-.barra-laterale a {
+.parte-sinistra-basso {
+  flex-grow: 1;
+  width: 100%;
+  padding: 12px 8px;
+  background-color: #fafafa;
+}
+
+.barra-di-ricerca {
+  padding: 1px 12px;
+  margin-bottom: 12px;
+}
+
+.parte-sinistra-basso nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0 12px;
+  gap: 8px;
+}
+
+.parte-sinistra-basso a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 9px 12px;
-  color: #2a5a7c;
-  text-decoration: none;
+  padding: 8px 12px;
   border-radius: 8px;
-  margin-bottom: 2px;
-  font-size: 14px;
-  font-weight: 500;
+  white-space: nowrap;
 }
 
-.barra-laterale a:hover {
-  background: #c8e6f5;
-  color: #1a3d56;
+.parte-sinistra-basso a:hover {
+  background-color: #e5e5e5;
 }
 
-.barra-laterale a.attivo {
-  background: #1e3a5f;
-  color: white;
+.parte-sinistra-footer {
+  border-top: 1px solid #d9d9d9;
+  padding: 8px;
 }
 
-/* Spinge help e logout in fondo */
-.barra-laterale a.in-fondo {
-  margin-top: auto;
-}
-
-/* Separa visivamente il gruppo in fondo */
-.barra-laterale .separatore {
-  margin-top: auto;
-  padding-top: 12px;
-  border-top: 1px solid #b8d8ec;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.barra-laterale .separatore a {
-  color: #5a8aa8;
-}
-
-/* parte destra: prende tutto lo spazio rimanente rimasto dalla barra laterale che è l'unico elemento
-che compone la parte sinistra */
-.parte-destra {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-   overflow: hidden;
-}
-
-.barra-superiore {
-  height: 56px;
-  flex-shrink: 0;
-  background: white;
-  border-bottom: 1px solid #e5e7eb;
+.parte-sinistra-footer button {
+  width: 100%;
+  height: 40px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 0 24px;
-  gap: 24px;
+  gap: 10px;
+  padding: 0 12px;
 }
 
-/*i link della barra superiore devono stare in orizzontale*/
-.barra-superiore nav {
+.parte-sinistra-footer button:hover {
+  background-color: #f2f2f2;
+}
+
+.parte-destra {
+  flex-grow: 1;
+}
+
+/* STATO CHIUSO */
+.parte-sinistra.collapsed {
+  width: 72px;
+}
+
+.parte-sinistra.collapsed .parte-sinistra-alto h2,
+.parte-sinistra.collapsed .parte-sinistra-basso a span,
+.parte-sinistra.collapsed .parte-sinistra-footer button span,
+.parte-sinistra.collapsed .barra-di-ricerca input {
+  display: none;
+}
+
+.parte-sinistra.collapsed .parte-sinistra-basso a,
+.parte-sinistra.collapsed .parte-sinistra-footer button {
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.parte-sinistra.collapsed .barra-di-ricerca {
   display: flex;
-  gap: 20px;
+  justify-content: center;
 }
 
-.barra-superiore a {
-  color: #6b7280;
-  text-decoration: none;
-}
-
-.barra-superiore a:hover {
-  color: #111;
+.parte-sinistra.collapsed .barra-di-ricerca button {
+  margin: 0;
 }
 
 
+.parte-destra {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: white;
+  border-right: 1px solid #d9d9d9;
+}
+
+.parte-destra-alto {
+  height: 58px;
+  padding: 0 8px;
+  border-bottom: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+}
+
+.parte-destra-alto nav {
+  display: flex;
+  flex-direction: row;
+  padding: 0px, 12px;
+  gap: 12px;
+}

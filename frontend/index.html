@@ -11,53 +11,81 @@
     />
   </head>
   <body>
-    <!-- Contenuto della tua Single Page Application -->
     <div class="pagina">
-      <!-- parte B barra laterale -->
-      <div class="barra-laterale">
-        <aside>
-          <nav>
-            <a href="#anagrafiche" class="attivo">
-              <i class="bi bi-people"></i> Anagrafiche
-            </a>
-            <a href="#contabilita">
-              <i class="bi bi-calculator"></i> Contabilità
-            </a>
-            <a href="#magazzino"> <i class="bi bi-box-seam"></i> Magazzino </a>
-            <a href="#vendite"> <i class="bi bi-graph-up"></i> Vendite </a>
-            <a href="#acquisti"> <i class="bi bi-cart"></i> Acquisti </a>
-            <a href="#risorse-umane">
-              <i class="bi bi-person-badge"></i> Risorse Umane
-            </a>
+      <div class="parte-sinistra" id="sidebar">
+        <div class="parte-sinistra-alto">
+          <h2>la tua gmail</h2>
+        </div>
 
-            <!-- Separatore: help e logout in fondo -->
-            <div class="separatore">
-              <a href="#help"> <i class="bi bi-question-circle"></i> Help </a>
-              <a href="#logout">
-                <i class="bi bi-box-arrow-right"></i> Logout
-              </a>
+        <div class="parte-sinistra-basso">
+          <aside>
+            <div class="barra-di-ricerca">
+              <input type="text" placeholder="Cerca..." />
+              <button><i class="bi bi-search"></i></button>
             </div>
-          </nav>
-        </aside>
+
+            <nav>
+              <a href="#anagrafiche">
+                <i class="bi bi-people"></i>
+                <span>Anagrafiche</span>
+              </a>
+
+              <a href="#contabilita">
+                <i class="bi bi-calculator"></i>
+                <span>Contabilità</span>
+              </a>
+
+              <a href="#magazzino">
+                <i class="bi bi-box-seam"></i>
+                <span>Magazzino</span>
+              </a>
+
+              <a href="#vendite">
+                <i class="bi bi-graph-up"></i>
+                <span>Vendite</span>
+              </a>
+
+              <a href="#acquisti">
+                <i class="bi bi-cart"></i>
+                <span>Acquisti</span>
+              </a>
+
+              <a href="#risorse-umane">
+                <i class="bi bi-person-badge"></i>
+                <span>Risorse Umane</span>
+              </a>
+
+              <a href="#settings">
+                <i class="bi bi-gear"></i>
+                <span>Impostazioni</span>
+              </a>
+
+              <a href="#logout">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Logout</span>
+              </a>
+            </nav>
+          </aside>
+        </div>
+
+        <div class="parte-sinistra-footer">
+          <button id="toggle-sidebar">
+            <i class="bi bi-layout-sidebar-inset"></i>
+            <span>Comprimi</span>
+          </button>
+        </div>
       </div>
 
-      <!--INIZIA LA PARTE A DESTRA DELLA PAGINA-->
       <div class="parte-destra">
-        <!-- parte A barra superiore -->
-        <div class="barra-superiore">
+        <div class="parte-destra-alto">
           <nav>
-            <a href="#dashboard">Dashboard</a>
-            <a href="#anagrafiche">Anagrafiche</a>
-            <a href="#analytics">Analytics</a>
-            <a href="#report">Report</a>
-            <a href="#informazioni">Informazioni</a>
-            <a href="#impostazioni">Impostazioni</a>
+            <a href="askAi">ask AI</a>
             <a href="#account">Account</a>
+            <a href="support"><i class="bi bi-question-circle"></i> Support</a>
           </nav>
         </div>
 
-        <!-- parte C contenuto principale -->
-        <div class="contenuto-principale">
+        <div>
           <main>
             <h1>Benvenuto nella tua Single Page Application</h1>
             <p>
@@ -68,5 +96,14 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const bottone = document.getElementById("toggle-sidebar");
+      const sidebar = document.getElementById("sidebar");
+
+      bottone.addEventListener("click", function () {
+        sidebar.classList.toggle("collapsed");
+      });
+    </script>
   </body>
 </html>
